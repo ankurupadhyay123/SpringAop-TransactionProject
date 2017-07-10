@@ -99,12 +99,17 @@ public class UserAccountService {
 
     @Transactional
     public void updateUser(UserAccount sender, UserAccount reciever, int balance) throws InterruptedException {
-        userAccountService2.updateAccountTransaction(sender, reciever, balance);
-        String sql = "Update UserAccount set balance = ? where  name = ?";
-        jdbcTemplate.update(sql, new Object[]{sender.getBalance()-balance, sender.getName()});
-        //Spring Transaction Question 4
-        updateUser2(reciever,balance);
 
+        try {
+            String sql = "Update UserAccount set balance = ? where  name = ?";
+            jdbcTemplate.update(sql, new Object[]{sender.getBalance()-balance, sender.getName()});
+            //Spring Transaction Question 4
+            updateUser2(reciever,balance);
+            userAccountService2.updateAccountTransaction(sender, reciever, balance);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
