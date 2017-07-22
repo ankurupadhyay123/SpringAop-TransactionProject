@@ -51,7 +51,8 @@ public class Main {
         //userAccountService.insertUser(userAccount4);
         //userAccountService.updateUser(userAccount3,userAccount2,balanceToTransfer);
         //userAccountService.readUser();
-        //userAccountService.deleteUser();
+      //TODO: deleteUser without args does not exist :-P
+      //userAccountService.deleteUser();
 
         //Spring Transaction Question 3
         //userAccountService.updateUserUsingProgrammaticTransaction(userAccount,userAccount2,balanceToTransfer);

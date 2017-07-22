@@ -9,6 +9,7 @@ import java.io.IOException;
 @Aspect
 public class MyAspect {
 
+    //TODO: As per Ques 1 , u need to to create a pointcut for all service method..  this won't do that. it creates pointcut only for method which have 'display' name
     //Spring Aop Question 1
     //Spring Aop Question 6
     /*@Pointcut("execution(void display())")
