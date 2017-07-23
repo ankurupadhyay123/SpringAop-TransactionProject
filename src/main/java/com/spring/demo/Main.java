@@ -12,13 +12,13 @@ public class Main {
     public static void main(String[] args) throws InterruptedException, IOException {
 
         //Spring AOP starts
-/*        ApplicationContext applicationContext2 = new ClassPathXmlApplicationContext("aop-spring-config.xml");
+        ApplicationContext applicationContext2 = new ClassPathXmlApplicationContext("aop-spring-config.xml");
         MyClass1 myClass1 = (MyClass1)applicationContext2.getBean("myClass1");
         System.out.println("calling");
         myClass1.display();
         myClass1.display2();
         myClass1.exceptionThrowMethod();
-        myClass1.run();*/
+        myClass1.run();
         //myClass1.displayNumber(4);
         //MyClass2 myClass2 = (MyClass2)applicationContext2.getBean("myClass2");
         //myClass2.display();
@@ -45,19 +45,19 @@ public class Main {
         UserAccountService userAccountService=applicationContext.getBean(UserAccountService.class);
 
         //Spring Transaction Question 2
+        //String username = "Ankur";
         //userAccountService.insertUser(userAccount);
         //userAccountService.insertUser(userAccount2);
         //userAccountService.insertUser(userAccount3);
         //userAccountService.insertUser(userAccount4);
         //userAccountService.updateUser(userAccount3,userAccount2,balanceToTransfer);
-        //userAccountService.readUser();
-      //TODO: deleteUser without args does not exist :-P
-      //userAccountService.deleteUser();
+        //userAccountService.readUser(username);
+      userAccountService.deleteUser(userAccount);
 
         //Spring Transaction Question 3
         //userAccountService.updateUserUsingProgrammaticTransaction(userAccount,userAccount2,balanceToTransfer);
 
-        userAccountService.readAllUser();
+//        userAccountService.readAllUser();
         //Spring Transaction Question 4
         /*userAccountService.updateUser(userAccount,userAccount2,balanceToTransfer);
         userAccountService.readTransactions();
@@ -66,7 +66,7 @@ public class Main {
         userAccountService.updateUser(userAccount3,userAccount4,balanceToTransfer);
         userAccountService.readTransactions();
         */
-        userAccountService.readAllUser();
+/*        userAccountService.readAllUser();
         userAccountService.updateUser(userAccount,userAccount4,balanceToTransfer);
         userAccountService.readAllUser();
         userAccountService.updateUser(userAccount2,userAccount3,balanceToTransfer);
@@ -75,6 +75,6 @@ public class Main {
         userAccountService.readAllUser();
         userAccountService.readTransactions();
 
-        System.out.println("Done");
+        System.out.println("Done");*/
     }
 }

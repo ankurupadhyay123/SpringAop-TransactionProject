@@ -77,10 +77,9 @@ public class UserAccountService {
 
     //Spring Transaction Question 5
     @Transactional(readOnly = true)
-    //TODO: Instead of passing static value "Ankur" in this method. pass it in arguents of readUser()
-    public void readUser() throws InterruptedException {
+    public void readUser(String name) throws InterruptedException {
         String sql = "SELECT * FROM UserAccount WHERE name = ?";
-        System.out.println(jdbcTemplate.queryForMap(sql, new Object[]{"Ankur"}));
+        System.out.println(jdbcTemplate.queryForMap(sql, new Object[]{name}));
 
     }
 

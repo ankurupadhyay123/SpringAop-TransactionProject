@@ -9,10 +9,9 @@ import java.io.IOException;
 @Aspect
 public class MyAspect {
 
-    //TODO: As per Ques 1 , u need to to create a pointcut for all service method..  this won't do that. it creates pointcut only for method which have 'display' name
     //Spring Aop Question 1
     //Spring Aop Question 6
-    /*@Pointcut("execution(void display())")
+    @Pointcut("execution(* *.*(..))")
     void displayAdvice(){}
 
     //Spring Aop Question 2
@@ -26,7 +25,7 @@ public class MyAspect {
         System.out.println("After Display Called");
     }
 
-    *///Spring Aop Question 3
+    //Spring Aop Question 3
     @AfterThrowing(pointcut = "execution(void exceptionThrowMethod())",throwing = "ex")
     void afterThrowing(IOException ex){
         System.out.println("Exception raised "+ ex);
